@@ -1,0 +1,16 @@
+{
+    "include": [
+        {
+            "type": "less",
+            "files": ["dialog.less"]
+        },
+        {
+            "type": "template",
+            "files": ["*"]
+        },
+        {
+            "type": "js",
+            "files": ["*"]
+        }
+    ]
+}

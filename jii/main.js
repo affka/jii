@@ -1,0 +1,53 @@
+// Load global libraries
+global._ = require('lodash');
+
+// Load Jii files
+global.Backbone = require('backbone');
+require('./../lib/joints/joints-v0.2.js');
+require('./Jii');
+require('./base/Object');
+require('./base/action/BaseAction');
+require('./base/action/ServerAction');
+require('./base/Component');
+require('./base/Module');
+require('./base/Application');
+require('./base/Enum');
+require('./base/Model');
+require('./base/UnitTest');
+require('./exceptions/ApplicationException');
+require('./data/Schema');
+require('./data/ColumnSchema');
+require('./data/Query');
+require('./data/DataModel');
+require('./data/redis/CollectionSchema');
+require('./data/redis/Command');
+require('./data/redis/RedisModel');
+require('./data/redis/RedisQuery');
+require('./validators/Validator');
+require('./validators/BooleanValidator');
+require('./validators/CompareValidator');
+require('./validators/DateValidator');
+require('./validators/DefaultValueValidator');
+require('./validators/EmailValidator');
+require('./validators/FilterValidator');
+require('./validators/InlineValidator');
+require('./validators/NumberValidator');
+require('./validators/RangeValidator');
+require('./validators/RegularExpressionValidator');
+require('./validators/RequiredValidator');
+require('./validators/SafeValidator');
+require('./validators/StringValidator');
+require('./validators/UrlValidator');
+require('./components/Db');
+require('./components/request/JsonRpc');
+require('./components/router/BaseRouter');
+require('./components/router/ServerRouter');
+require('./components/comet/CometServer.js');
+require('./components/Logger');
+require('./components/Redis');
+require('./components/String');
+require('./components/Time');
+require('./actions/AccessControlAction');
+require('./actions/JsonRpcAction');
+
+Jii.isNode = true;

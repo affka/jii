@@ -1,0 +1,14 @@
+{
+    "include": [
+        {
+            "type": "js",
+            "files": [
+                "base.js",
+                "utils.js",
+                "Events.js",
+                "*"
+            ]
+        }
+    ],
+    "wrap": true
+}

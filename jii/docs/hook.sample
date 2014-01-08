@@ -1,0 +1,13 @@
+#!/bin/sh
+
+JII_DIR=$GIT_DIR/../public/lib #Jii src dir
+CHANGED=`git diff HEAD@{1} --stat -- $JII_DIR/ | wc -l`
+
+c_std="[0;39m"
+c_green="[0;32m"
+
+if [ $CHANGED -gt 0 ];
+then
+    echo "${c_green}Jii files has changed. Building docs...${c_std}"
+    e:/webdev/jsduck.exe $JII_DIR/joints $JII_DIR/jii --output e:/webdev/home/jiidocs.loc/www #Bulding docs [Check paths!]
+fi

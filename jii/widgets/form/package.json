@@ -1,0 +1,16 @@
+{
+    "include": [
+        {
+            "type": "template",
+            "files": ["*"]
+        },
+        {
+            "type": "js",
+            "files": [
+                "./BaseField.js",
+                "./fields/TextField.js",
+                "*"
+            ]
+        }
+    ]
+}

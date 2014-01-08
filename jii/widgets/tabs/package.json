@@ -1,0 +1,12 @@
+{
+    "include": [
+        {
+            "type": "template",
+            "files": ["*"]
+        },
+        {
+            "type": "js",
+            "files": ["*"]
+        }
+    ]
+}

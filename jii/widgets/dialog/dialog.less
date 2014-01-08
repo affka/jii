@@ -1,0 +1,77 @@
+.dialog {
+	&.wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 102;
+	}
+
+	&.alignMode-table {
+		position: fixed;
+		overflow: auto;
+
+		.container-table {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+		.container-table-cell {
+			display: table-cell;
+		}
+		.window {
+			display: inline-block;
+		}
+	}
+
+	pointer-events: none;
+	&.isModal {
+		pointer-events: auto;
+	}
+
+	.window {
+		pointer-events: auto;
+
+		.body {
+			min-height: 100%;
+			margin: 20px;
+			background: white;
+		}
+	}
+
+	.button-close {
+		float: right;
+		margin: 10px;
+
+		a {
+			display: block;
+		}
+	}
+
+	&.isDraggable {
+		.header {
+			cursor: move;
+		}
+	}
+
+	.header {
+		position: relative;
+		overflow: hidden;
+		z-index: 2;
+
+		h1 {
+			padding: 0;
+			margin: 0;
+			font: normal 20px Arial;
+			color: #1a1a1a;
+			float: left;
+		}
+	}
+
+}
+
+body.dialog-modal-opened {
+	overflow: hidden;
+	height: 100%;
+}
