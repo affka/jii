@@ -236,7 +236,7 @@
             var model = this.instantiate(row);
             model.setAttributes(row, false);
             model.setScenario('update');
-            model._oldAttributes = model._attributes;
+            model._oldAttributes = _.clone(model._attributes);
             model.afterFind();
 
             return model;
