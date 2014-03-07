@@ -173,20 +173,20 @@ var self = Joints.defineClass('Jii.controller.UrlRule', Jii.base.Component, {
             var name = i !== -1 ? match.substr(0, i) : match;
             var pattern = i !== -1 ? match.substr(i + 1) : self.DEFAULT_PATTERN;
 
-            if (this.defaults[name]) {
+            if (_.has(this.defaults, name)) {
                 var length = match.length;
                 var offset = this.pattern.indexOf(match);
                 if (offset > 0 && this.pattern.substr(offset - 2, 1) === '/' && this.pattern.substr(offset + length + 1, 1) === '/') {
-                    tr['/<' + name + '>'] = '/?(?P<' + name + '>' + pattern + ')?';
+                    tr['/<' + name + '>'] = '(/(?P<' + name + '>' + pattern + '))?';
                 } else {
-                    tr['<' + name + '>'] = '(?P<' + name + '>' + pattern + ')?';
+                    tr['<' + name + '>'] = '((?P<' + name + '>' + pattern + '))?';
                 }
             } else {
-                tr['<' + name + '>'] = '(?P<' + name + '>' + pattern + ')';
+                tr['<' + name + '>'] = '((?P<' + name + '>' + pattern + '))';
             }
 
-            if (this._routeParams[name]) {
-                tr2['<' + name + '>'] = '(?P<' + name + '>' + pattern + ')';
+            if (_.has(this._routeParams, name)) {
+                tr2['<' + name + '>'] = '((?P<' + name + '>' + pattern + '))';
             } else {
                 this._paramRules[name] = pattern === self.DEFAULT_PATTERN ? '' : '^' + pattern + '$';
             }
@@ -221,7 +221,7 @@ var self = Joints.defineClass('Jii.controller.UrlRule', Jii.base.Component, {
         if (suffix && pathInfo) {
             var length = suffix.length;
             if (pathInfo.substr(-1 * length) === suffix) {
-                pathInfo = pathInfo.substr(0, -1 * length);
+                pathInfo = pathInfo.substr(0, pathInfo.length - length);
                 if (pathInfo === '') {
                     // suffix alone is not allowed
                     return false;
@@ -241,6 +241,11 @@ var self = Joints.defineClass('Jii.controller.UrlRule', Jii.base.Component, {
         }
 
         if (_.isObject(matches[0])) {
+            // Skip first slash (added in pattern)
+            _.each(matches[0], function(value, name) {
+                matches[0][name] = _.ltrim(value, '/');
+            });
+
             _.each(this.defaults, function(value, name) {
                 if (!_.has(matches[0], name) || matches[0][name] === '') {
                     matches[0][name] = value;
@@ -391,7 +396,7 @@ var self = Joints.defineClass('Jii.controller.UrlRule', Jii.base.Component, {
         }
         else{
             for(var i=0,l=tmpkeys.length; i<l; i++){
-                keys[i] = tmpkeys[i];
+                keys[(i*2)+1] = tmpkeys[i];
             }
         }
 

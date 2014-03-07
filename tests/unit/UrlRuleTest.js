@@ -6,7 +6,7 @@ require('./bootstrap');
  */
 var self = Joints.defineClass('tests.unit.UrlRuleTest', Jii.base.UnitTest, {
 
-    createUrlTest__: function (test) {
+    createUrlTest: function (test) {
         var manager = new Jii.controller.UrlManager({cache: null});
         var suites = this._getTestsForCreateUrl();
         _.each(suites, function(suite, i) {
@@ -199,7 +199,7 @@ var self = Joints.defineClass('tests.unit.UrlRuleTest', Jii.base.UnitTest, {
         //     expected route, or false if the rule doesn't apply
         //     expected params, or not set if empty
         return [
-            /*['empty pattern', {pattern: '', route: 'post\/index'}, [
+            ['empty pattern', {pattern: '', route: 'post\/index'}, [
                 ['', 'post\/index'],
                 ['a', false]
             ]],
@@ -264,14 +264,14 @@ var self = Joints.defineClass('tests.unit.UrlRuleTest', Jii.base.UnitTest, {
                 ['post\/a', 'post\/index', {page: '1', tag: 'a'}],
                 ['post\/2', 'post\/index', {page: '1', tag: '2'}],
                 ['post', false]
-            ]],*/
-            ['consecutive optional params', {pattern: 'post/<page:\\d+>/<tag>', route: 'post\/index', defaults: {page: 1, tag: 'a'}}, [
+            ]],
+            ['consecutive optional params', {pattern: 'post/<page:\\d+>/<tag>', route: 'post\/index', defaults: {page: '1', tag: 'a'}}, [
                 ['post\/2\/b', 'post\/index', {page: '2', tag: 'b'}],
                 ['post\/2', 'post\/index', {page: '2', tag: 'a'}],
                 ['post', 'post\/index', {page: '1', tag: 'a'}],
                 ['post\/b', 'post\/index', {page: '1', tag: 'b'}],
-                ['post\/\/b', false]
-            ]]/*,
+                ['post//b', false]
+            ]],
             ['consecutive optional params separated by dash', {pattern: 'post/<page:\\d+>-<tag>', route: 'post\/index', defaults: {page: 1, tag: 'a'}}, [
                 ['post\/2-b', 'post\/index', {page: '2', tag: 'b'}],
                 ['post\/2-', 'post\/index', {page: '2', tag: 'a'}],
@@ -324,7 +324,7 @@ var self = Joints.defineClass('tests.unit.UrlRuleTest', Jii.base.UnitTest, {
                 ['post\/1', 'post\/index', {page: '1', lang: 'en'}],
                 ['post\/a', false],
                 ['post\/1\/a', false]
-            ]]*/
+            ]]
         ];
     }
 
