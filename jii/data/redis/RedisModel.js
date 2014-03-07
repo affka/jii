@@ -26,6 +26,14 @@ Joints.defineClass('Jii.data.redis.RedisModel', Jii.data.DataModel, {
 
         // Fill query params
         switch (schema.getFormat()) {
+            case Jii.data.redis.CollectionSchema.FORMAT_STRING:
+                return this.static.getRedis().createCommand('set', {
+                    key: schemaKey,
+                    value: JSON.stringify(this.getAttributes())
+                }).execute().then(function (reply) {
+                    return reply === 'OK'
+                });
+
             case Jii.data.redis.CollectionSchema.FORMAT_HASHES:
                 return this.static.getRedis().createCommand('hset', {
                     key: schemaKey,
@@ -84,6 +92,13 @@ Joints.defineClass('Jii.data.redis.RedisModel', Jii.data.DataModel, {
 
         // Fill query params
         switch (schema.getFormat()) {
+            case Jii.data.redis.CollectionSchema.FORMAT_STRING:
+                return this.static.getRedis().createCommand('del', {
+                    key: schemaKey
+                }).execute().then(function (reply) {
+                    return reply !== null && reply > 0;
+                });
+
             case Jii.data.redis.CollectionSchema.FORMAT_HASHES:
                 return this.static.getRedis().createCommand('hdel', {
                     key: schemaKey,

@@ -8,11 +8,12 @@ var http = require('http');
 var express = require('express');
 
 /**
- * @class Jii.components.router.ServerRouter
- * @extends Jii.components.router.BaseRouter
+ * @class Jii.controllers.HttpServer
+ * @extends Jii.base.Component
  */
-var self = Joints.defineClass('Jii.components.router.ServerRouter', Jii.components.router.BaseRouter, {
+var self = Joints.defineClass('Jii.controllers.HttpServer', Jii.base.Component, {
 
+    host: '0.0.0.0',
     port: 3000,
     _express: null,
     _server: null,
@@ -22,32 +23,24 @@ var self = Joints.defineClass('Jii.components.router.ServerRouter', Jii.componen
         this._express.use(express.json());
         this._express.use(express.urlencoded());
 
-        // Init routes
-        _.each(this.routes, this._initRoute.bind(this));
+        // Subscribe on all requests
+        this._express.all('*', this._onRoute.bind(this));
     },
 
     /**
      * Start listen http queries
      */
     start: function () {
-        Jii.app.logger.info('Start http server, listening port `%s`.', this.port);
-        this._server = http.createServer(this._express).listen(this.port);
+        Jii.app.logger.info('Start http server, listening `%s`.', this.host + ':' + this.port);
+        this._server = http.createServer(this._express).listen(this.port, this.host);
     },
 
     /**
-     * Initialize route item
-     * @param {Jii.base.Action} ActionClass
-     * @param {string} route
-     * @private
+     * Stop listen http port
      */
-    _initRoute: function (className, route) {
-        // Check class name exists
-        if (!className) {
-            throw new Jii.exceptions.ApplicationException('Not find class name in action class.');
-        }
-
-        // Subscribe on route
-        this._express.all('/' + route, this._onRoute.bind(this));
+    stop: function () {
+        this._server.close();
+        Jii.app.logger.info('Http server is stopped.');
     },
 
     /**
@@ -104,17 +97,5 @@ var self = Joints.defineClass('Jii.components.router.ServerRouter', Jii.componen
         } else {
             action._expressResponse.send(action.data);
         }
-    },
-
-    /**
-     * Stop listen http port
-     */
-    stop: function () {
-        this._server.close();
-        Jii.app.logger.info('Http server is stopped.');
-    },
-
-    static: function (path) {
-        this._express.use(express.static(path));
     }
 });

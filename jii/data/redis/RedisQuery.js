@@ -31,11 +31,19 @@
          */
         findByPk: function (value) {
             var schema = this.modelClass.getSchema();
+            var pkAttributes = {};
+            pkAttributes[schema.primaryKey] = value;
 
             switch (schema.getFormat()) {
+                case Jii.data.redis.CollectionSchema.FORMAT_STRING:
+                    this.method = 'get';
+                    this.key = schema.getKey(pkAttributes);
+                    this.field = value;
+                    break;
+
                 case Jii.data.redis.CollectionSchema.FORMAT_HASHES:
                     this.method = 'hget';
-                    this.key = schema.getKey();
+                    this.key = schema.getKey(pkAttributes);
                     this.field = value;
                     break;
 
@@ -258,10 +266,23 @@
                 } else if (this._via[0]) {
                     // is pk[]
 
+                    var pkAttributes = {};
+                    pkAttributes[schema.primaryKey] = reply;
+
                     // Build query
-                    this.method = this._multiple ? 'hmget' : 'hget';
-                    this.key = this.modelClass.getSchema().getKey();
-                    this.field = this._via;
+                    switch (this.modelClass.getSchema().getFormat()) {
+                        case Jii.data.redis.CollectionSchema.FORMAT_STRING:
+                            this.method = this._multiple ? 'mget' : 'get';
+                            this.key = this.modelClass.getSchema().getKey(pkAttributes);
+                            break;
+
+                        case Jii.data.redis.CollectionSchema.FORMAT_HASHES:
+                            this.method = this._multiple ? 'hmget' : 'hget';
+                            this.key = this.modelClass.getSchema().getKey(pkAttributes);
+                            this.field = reply;
+                            break;
+                    }
+
 
                     deferred.resolve(true);
                 }

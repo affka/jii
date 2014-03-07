@@ -1,9 +1,12 @@
 // Load global libraries
+//global._ = require('./../lib/underscore/underscore');
 global._ = require('lodash');
+global._.str = require('./../lib/underscore/underscore.string');
+_.mixin(_.str.exports());
 
 // Load Jii files
 global.Backbone = require('backbone');
-require('./../lib/joints/joints-v0.2.js');
+require('./../lib/joints/joints-v0.2');
 require('./Jii');
 require('./base/Object');
 require('./base/action/BaseAction');
@@ -41,7 +44,7 @@ require('./validators/UrlValidator');
 require('./components/Db');
 require('./components/request/JsonRpc');
 require('./components/router/BaseRouter');
-require('./components/router/ServerRouter');
+//require('./components/router/ServerRouter');
 require('./components/comet/CometServer.js');
 require('./components/Logger');
 require('./components/Redis');
@@ -49,5 +52,9 @@ require('./components/String');
 require('./components/Time');
 require('./actions/AccessControlAction');
 require('./actions/JsonRpcAction');
+require('./controller/UrlRule');
+require('./controller/UrlManager');
+require('./controller/BaseRequest');
+require('./controller/httpServer/Request');
 
 Jii.isNode = true;

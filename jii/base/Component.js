@@ -12,6 +12,20 @@ var self = Joints.defineClass('Jii.base.Component', Joints.Events, {
 
     className: null,
 
+    /**
+     *
+     * @param {object} [config]
+     * @constructor
+     */
+    constructor: function(config) {
+        this._super.apply(this, arguments);
+
+        if (config) {
+            Jii.configure(this, config);
+        }
+        this.init();
+    },
+
     init: function() {
 
     },

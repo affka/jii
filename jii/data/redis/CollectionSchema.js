@@ -33,11 +33,12 @@
         },
 
         isSupportedVia: function() {
-            return this.getFormat() === self.FORMAT_HASHES;
+            return this.getFormat() === self.FORMAT_HASHES || this.getFormat() === self.FORMAT_STRING;
         }
 
     }, {
 
+        FORMAT_STRING: 'string',
         FORMAT_HASHES: 'hashes',
         FORMAT_LISTS: 'lists',
         FORMAT_SETS: 'sets',

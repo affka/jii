@@ -53,8 +53,10 @@ Joints.defineClass('Jii.data.redis.Command', Jii.base.Object, {
         // Send query
         this.connection.send_command(this.method, attributes, function(err) {
             if (err) {
-                Jii.app.logger.error('Redis error: ' + err);
+                Jii.app.logger.error('Redis error: ' + err + ', request: ' + this.method + ' ' + attributes.join(' '));
             }
+
+            //Jii.app.logger.debug('Redis command: ', this.method, attributes.join(' '), _.rest(arguments));
 
             // Return result
             deferred.resolve.apply(this, _.rest(arguments));
