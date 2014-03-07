@@ -7,7 +7,7 @@
  * @class Jii.controller.BaseRequest
  * @extends Jii.base.Component
  */
-var self = Joints.defineClass('Jii.controller.BaseRequest', Jii.base.Component, {
+var self = Joints.defineClass('Jii.controller.BaseRequest', Jii.base.Object, {
 
     /**
      *

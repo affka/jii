@@ -11,20 +11,24 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
 
     _httpMessage: null,
 
-    /**
-     * Resolves the current request into a route and the associated parameters.
-     * @return {array} the first element is the route, and the second is the associated parameters.
-     * @throws {Jii.exceptions.InvalidRouteException} if the request cannot be resolved.
-     */
-    resolve: function() {
-        var result = Jii.app.getUrlManager().parseRequest(this);
-        if (result !== false) {
-            /*list ($route, $params) = $result;
-            $_GET = array_merge($_GET, $params);
-            return [$route, $_GET];*/
+    constructor: function(httpMessage) {
+        if (!httpMessage.method) {
+            throw new Jii.exceptions.InvalidConfigException('Not found param `method` in http message.');
         }
+        if (!httpMessage.headers) {
+            throw new Jii.exceptions.InvalidConfigException('Not found `headers` in http message.');
+        }
+        this._httpMessage = httpMessage;
 
-        throw new Jii.exceptions.InvalidRouteException(Jii.t('jii', 'Page not found.'));
+        this.init();
+    },
+
+    /**
+     * Returns the headers object.
+     * @return {object}
+     */
+    getHeaders: function() {
+        return this._httpMessage.headers;
     },
 
     /**
@@ -109,107 +113,103 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
         return userAgent && (userAgent.indexOf('Shockwave') !== -1 ||userAgent.indexOf('Flash') !== -1);
     },
 
-    _restParams: null,
+    _bodyParams: null,
 
     /**
-     * Returns the request parameters for the RESTful request.
-     * @return {array} The RESTful request parameters
-     * @see getMethod()
+     * Returns the request parameters given in the request body.
+     *
+     * Request parameters are determined using the parsers configured in [[parsers]] property.
+     * @return {object} the request parameters given in the request body.
      */
-    getRestParams: function() {
-        if (this._restParams === null) {
-            this._restParams = []; // @todo
+    getBodyParams: function() {
+        if (this._bodyParams === null) {
+            // @todo Change this code, when delete express
+            this._bodyParams = this._httpMessage.body;
         }
-        return this._restParams;
+        return this._bodyParams;
     },
 
     /**
-     * Sets the RESTful parameters.
-     * @param {array} values The RESTful parameters (name-value pairs)
+     * Sets the request body parameters.
+     * @param {object} values the request body parameters (name-value pairs)
      */
-    setRestParams: function(values) {
-        this._restParams = values;
+    setBodyParams: function(values) {
+        this._bodyParams = values;
     },
 
-    _rawBody: null,
+    /**
+     * Returns the named request body parameter value.
+     * @param {string} name the parameter name
+     * @param {*} [defaultValue] the default parameter value if the parameter does not exist.
+     * @return {*} the parameter value
+     */
+    getBodyParam: function(name, defaultValue) {
+        defaultValue = defaultValue || null;
+
+        var bodyParams = this.getBodyParams();
+        return _.has(bodyParams, name) ? bodyParams[name] : defaultValue;
+    },
 
     /**
-     * Returns the raw HTTP request body.
-     * @return {string} The request body
+     * Returns POST parameter with a given name. If name isn't specified, returns an array of all POST parameters.
+     * @param {string} name the parameter name
+     * @param {*} defaultValue the default parameter value if the parameter does not exist.
+     * @return {*} The POST parameter value
      */
-    getRawBody: function() {
-        if (this._rawBody === null) {
-            this._rawBody = []; // @todo
+    post: function(name, defaultValue) {
+        name = name || null;
+        defaultValue = defaultValue || null;
+
+        return name === null ? this.getBodyParams() : this.getBodyParam(name, defaultValue);
+    },
+
+    _queryParams: null,
+
+    /**
+     * Returns the request parameters given in the [[queryString]].
+     * @return {object} the request GET parameter values.
+     */
+    getQueryParams: function() {
+        if (this._queryParams === null) {
+            // @todo Change this code, when delete express
+            this._queryParams = this._httpMessage.query;
         }
-        return this._rawBody;
+        return this._queryParams;
     },
 
     /**
-     * Returns the named RESTful parameter value.
-     * @param {string} name The parameter name
-     * @param {*} defaultValue The default parameter value if the parameter does not exist.
-     * @return {*}
+     * Sets the request [[queryString]] parameters.
+     * @param {object} values the request query parameters (name-value pairs)
      */
-    getRestParam: function(name, defaultValue) {
-        var params = this.getRestParams();
-        return !_.isUndefined(params[name]) ? params[name] : defaultValue || null;
+    setQueryParams: function(values) {
+        this._queryParams = values;
+    },
+
+    /**
+     * Returns the named GET parameter value.
+     * @param {string} name the parameter name
+     * @param {*} [defaultValue] the default parameter value if the parameter does not exist.
+     * @return {*} the parameter value
+     */
+    getQueryParam: function(name, defaultValue) {
+        defaultValue = defaultValue || null;
+
+        var queryParams = this.getQueryParams();
+        return _.has(queryParams, name) ? queryParams[name] : defaultValue;
     },
 
     /**
      * Returns the named GET parameter value.
      * If the GET parameter does not exist, the second parameter to this method will be returned.
-     * @param {string} name the GET parameter name. If not specified, whole all get params is returned.
-     * @param {*} defaultValue the default parameter value if the GET parameter does not exist.
+     * @param {string} [name] the GET parameter name. If not specified, whole all get params is returned.
+     * @param {*} [defaultValue] the default parameter value if the GET parameter does not exist.
      * @return {*} the GET parameter value
-     * @see getPost()
      */
     get: function(name, defaultValue) {
-        if (!name) {
-            return []; // @todo GET
-        }
-        return ''; // @todo by GET
-    },
+        name = name || null;
+        defaultValue = defaultValue || null;
 
-    /**
-     * Returns the named POST parameter value.
-     * If the POST parameter does not exist, the second parameter to this method will be returned.
-     * @param {string} name The POST parameter name. If not specified, whole all post params is returned.
-     * @param {*} defaultValue The default parameter value if the POST parameter does not exist.
-     * @return {*} The POST parameter value
-     * @see get()
-     */
-    getPost: function(name, defaultValue) {
-        // @todo
-    },
-
-    /**
-     * Returns the named DELETE parameter value.
-     * @param {string} name The DELETE parameter name. If not specified, an array of DELETE parameters is returned.
-     * @param {*} defaultValue The default parameter value if the DELETE parameter does not exist.
-     * @return {*} The DELETE parameter value
-     */
-    getDelete: function(name, defaultValue) {
-        // @todo
-    },
-
-    /**
-     * Returns the named PUT parameter value.
-     * @param {string} name The PUT parameter name. If not specified, an array of PUT parameters is returned.
-     * @param {*} defaultValue The default parameter value if the PUT parameter does not exist.
-     * @return {*} The PUT parameter value
-     */
-    getPut: function(name, defaultValue) {
-        // @todo
-    },
-
-    /**
-     * Returns the named PATCH parameter value.
-     * @param {string} name The PATCH parameter name. If not specified, an array of PATCH parameters is returned.
-     * @param {*} defaultValue The default parameter value if the PATCH parameter does not exist.
-     * @return {*} The PATCH parameter value
-     */
-    getPatch: function(name, defaultValue) {
-        // @todo
+        return name === null ? this.getQueryParams() : this.getQueryParam(name, defaultValue);
     },
 
     _hostInfo: null,
@@ -220,11 +220,11 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * By default this is determined based on the user request information.
      * You may explicitly specify it by setting the setHostInfo().
      * @return {string} Schema and hostname part (with port number if needed) of the request URL
-     * @see setHostInfo()
      */
     getHostInfo: function() {
         if (this._hostInfo === null) {
-            this._hostInfo = ''; // @todo
+            var http = this.isSecureConnection() ? 'https' : 'http';
+            this._hostInfo = http + '://' + this._httpMessage.headers.host;
         }
         return this._hostInfo;
     },
@@ -246,11 +246,10 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * This is similar to [[scriptUrl]] except that it does not include the script file name,
      * and the ending slashes are removed.
      * @return {string} The relative URL for the application
-     * @see setScriptUrl()
      */
     getBaseUrl: function() {
         if (this._baseUrl === null) {
-            this._baseUrl = ''; // @todo
+            this._baseUrl = this.getHostInfo(); // @todo
         }
         return this._baseUrl;
     },
@@ -265,29 +264,6 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
         this._baseUrl = value;
     },
 
-    _scriptUrl: null,
-
-    /**
-     * Returns the relative URL of the entry script.
-     * @return {string} The relative URL of the entry script.
-     */
-    getScriptUrl: function() {
-        if (this._scriptUrl === null) {
-            this._scriptUrl = ''; // @todo
-        }
-        return this._scriptUrl;
-    },
-
-    /**
-     * Sets the relative URL for the application entry script.
-     * This setter is provided in case the entry script URL cannot be determined
-     * on certain Web servers.
-     * @param {string} value The relative URL for the application entry script.
-     */
-    setScriptUrl: function(value) {
-        this._scriptUrl = '/' + _.trim(value, '/');
-    },
-
     _pathInfo: null,
 
     /**
@@ -299,7 +275,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     getPathInfo: function() {
         if (this._pathInfo === null) {
-            this._pathInfo = this._resolvePathInfo();
+            this._pathInfo = this._httpMessage._parsedUrl.pathname;
         }
         return this._pathInfo;
     },
@@ -311,17 +287,6 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     setPathInfo: function(value) {
         this._pathInfo = _.ltrim(value, '/');
-    },
-
-    /**
-     * Resolves the path info part of the currently requested URL.
-     * A path info refers to the part that is after the entry script and before the question mark (query string).
-     * The starting slashes are both removed (ending slashes will be kept).
-     * @return {string} Part of the request URL that is after the entry script and before the question mark.
-     * Note, the returned path info is decoded.
-     */
-    _resolvePathInfo: function() {
-
     },
 
     /**
@@ -343,7 +308,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     getUrl: function() {
         if (this._url === null) {
-            this._url = this._resolveRequestUri();
+            this._url = this._httpMessage.url;
         }
         return this._url;
     },
@@ -358,22 +323,17 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
         this._url = _.ltrim(value, '/');
     },
 
-    /**
-     * Resolves the request URI portion for the currently requested URL.
-     * This refers to the portion that is after the [[hostInfo]] part. It includes the [[queryString]] part if any.
-     * @return {string|boolean} the request URI portion for the currently requested URL.
-     * Note that the URI returned is URL-encoded.
-     */
-    _resolveRequestUri: function() {
-
-    },
+    _queryString: null,
 
     /**
      * Returns part of the request URL that is after the question mark.
      * @return {string} Part of the request URL that is after the question mark
      */
     getQueryString: function() {
-        // @todo
+        if (this._queryString === null) {
+            this._queryString = this._httpMessage._parsedUrl.query;
+        }
+        return this._queryString;
     },
 
     /**
@@ -384,28 +344,45 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
         // @todo
     },
 
+    _serverName: null,
+
     /**
      * Returns the server name.
      * @return {string} Server name
      */
     getServerName: function() {
-        // @todo
+        if (this._serverName === null) {
+            this._serverName = this._httpMessage.headers.host.replace(/:[0-9]+$/, '');
+        }
+        return this._serverName;
     },
+
+    _serverPort: null,
 
     /**
      * Returns the server port number.
      * @return {number} Server port number
      */
     getServerPort: function() {
-        // @todo
+        if (this._serverPort === null) {
+            var port = this._httpMessage.headers.host.replace(/^[^:]+/, '');
+            this._serverPort = port ? parseInt(port) : 80;
+        }
+        return this._serverPort;
     },
+
+    _referrer: null,
 
     /**
      * Returns the URL referrer, null if not present
      * @return string URL referrer, null if not present
      */
     getReferrer: function() {
-        // @todo
+        if (this._referrer === null) {
+            var headers = this.getHeaders();
+            this._referrer = headers.referrer || headers.referer || null;
+        }
+        return this._referrer;
     },
 
     /**
@@ -413,7 +390,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * @return string user agent, null if not present
      */
     getUserAgent: function() {
-        // @todo
+        return this._httpMessage.headers['user-agent'];
     },
 
     /**
@@ -421,7 +398,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * @return string user IP address
      */
     getUserIP: function() {
-        // @todo
+        return this._httpMessage.headers['x-real-ip'] || this._httpMessage.remoteAddress || null;
     },
 
     /**
@@ -430,14 +407,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     getUserHost: function() {
         // @todo
-    },
-
-    /**
-     * Returns user browser accept types, null if not present.
-     * @return string user browser accept types, null if not present
-     */
-    getAcceptTypes: function() {
-        // @todo
+        return this.getUserIP();
     },
 
     _port: null,
@@ -451,7 +421,8 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     getPort: function() {
         if (this._port === null) {
-            this._port = 80; // @todo
+            var serverPort = this.getServerPort();
+            this._port = !this.isSecureConnection() && serverPort ? serverPort : 80;
         }
         return this._port;
     },
@@ -480,7 +451,8 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     getSecurePort: function() {
         if (this._securePort === null) {
-            this._securePort = 0; // @todo
+            // @todo
+            this._securePort = 443;
         }
         return this._securePort;
     },
@@ -498,6 +470,11 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
         }
     },
 
+    getContentType: function() {
+        // @todo
+        return null;
+    },
+
     _contentTypes: null,
 
     /**
@@ -506,9 +483,10 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * @return {array} The content types ordered by the preference level. The first element
      * represents the most preferred content type.
      */
-    getAcceptedContentTypes: function() {
+    getAcceptableContentTypes: function() {
         if (this._contentTypes === null) {
-            this._contentTypes = []; // @todo
+            var acceptHeader = this._httpMessage.headers.accept;
+            this._contentTypes = acceptHeader ? this._parseAcceptHeader(acceptHeader) : [];
         }
         return this._contentTypes;
     },
@@ -517,7 +495,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * @param {array} value The content types that are accepted by the end user. They should
      * be ordered by the preference level.
      */
-    setAcceptedContentTypes: function(value) {
+    setAcceptableContentTypes: function(value) {
         this._contentTypes = value;
     },
 
@@ -529,7 +507,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * @return {array} The languages ordered by the preference level. The first element
      * represents the most preferred language.
      */
-    getAcceptedLanguages: function() {
+    getAcceptableLanguages: function() {
         if (this._languages === null) {
             if (this._httpMessage.accept) {
                 this._languages = this._parseAcceptHeader(this._httpMessage.accept);
@@ -543,7 +521,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * @param {array} value The languages that are accepted by the end user. They should
      * be ordered by the preference level.
      */
-    setAcceptedLanguages: function(value) {
+    setAcceptableLanguages: function(value) {
         this._languages = value;
     },
 
@@ -562,12 +540,12 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      * The language resolution is based on the user preferred languages and the languages
      * supported by the application. The method will try to find the best match.
      * @param {object} languages A list of the languages supported by the application.
-     * If empty, this method will return the first language returned by [[getAcceptedLanguages()]].
-     * @return {string} The language that the application should use. Null is returned if both [[getAcceptedLanguages()]]
+     * If empty, this method will return the first language returned by [[getAcceptableLanguages()]].
+     * @return {string} The language that the application should use. Null is returned if both [[getAcceptableLanguages()]]
      * and `languages` are empty.
      */
     getPreferredLanguage: function(languages) {
-        var acceptedLanguages = this.getAcceptedLanguages();
+        var acceptedLanguages = this.getAcceptableLanguages();
         var finedLanguage = null;
 
         if (_.isEmpty(languages)) {
@@ -595,14 +573,9 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
     getCookies: function() {
 
         if (this._cookies === null) {
-            this._cookies = this._loadCookies();
+            this._cookies = this._httpMessage.cookies || {};
         }
         return this._cookies;
-    },
-
-    _loadCookies: function() {
-        // @todo
     }
-
 
 });

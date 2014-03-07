@@ -36,6 +36,9 @@ var self = Joints.defineClass('Jii', Joints.Object, {}, {
             },
             time: {
                 className: 'Jii.components.Time'
+            },
+            urlManager: {
+                className: 'Jii.controller.UrlManager'
             }
         }
     },

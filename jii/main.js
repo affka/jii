@@ -56,5 +56,6 @@ require('./controller/UrlRule');
 require('./controller/UrlManager');
 require('./controller/BaseRequest');
 require('./controller/httpServer/Request');
+require('./controller/httpServer/HttpServer');
 
 Jii.isNode = true;

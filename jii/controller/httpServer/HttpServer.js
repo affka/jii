@@ -8,13 +8,19 @@ var http = require('http');
 var express = require('express');
 
 /**
- * @class Jii.controllers.HttpServer
+ * @class Jii.controller.httpServer.HttpServer
  * @extends Jii.base.Component
  */
-var self = Joints.defineClass('Jii.controllers.HttpServer', Jii.base.Component, {
+var self = Joints.defineClass('Jii.controller.httpServer.HttpServer', Jii.base.Component, {
 
     host: '0.0.0.0',
     port: 3000,
+
+    /**
+     * @type {Jii.controller.UrlManager|string}
+     */
+    urlManager: 'urlManager',
+
     _express: null,
     _server: null,
 
@@ -25,6 +31,10 @@ var self = Joints.defineClass('Jii.controllers.HttpServer', Jii.base.Component, 
 
         // Subscribe on all requests
         this._express.all('*', this._onRoute.bind(this));
+
+        if (_.isString(this.urlManager)) {
+            this.urlManager = Jii.app.getComponent(this.urlManager);
+        }
     },
 
     /**
@@ -44,12 +54,25 @@ var self = Joints.defineClass('Jii.controllers.HttpServer', Jii.base.Component, 
     },
 
     /**
-     * @param {object} request
-     * @param {object} response
+     * @param {object} expressRequest
+     * @param {object} expressResponse
      * @private
      */
-    _onRoute: function (request, response) {
-        var runDeferred = null;
+    _onRoute: function (expressRequest, expressResponse) {
+        var request = new Jii.controller.httpServer.Request(expressRequest);
+        var result = this.urlManager.parseRequest(request);
+        console.log(result);
+
+            /*var result = Jii.app.getUrlManager().parseRequest(this);
+            if (result !== false) {
+                list ($route, $params) = $result;
+                 $_GET = array_merge($_GET, $params);
+                 return [$route, $_GET];
+            }
+            throw new Jii.exceptions.InvalidRouteException(Jii.t('jii', 'Page not found.'));*/
+
+        expressResponse.send('<form method=POST><input name=qwe /></form>');
+        /*var runDeferred = null;
 
         if (request.method === 'OPTIONS') {
             runDeferred = this.runAction('jii/accessControl', request, response);
@@ -68,7 +91,7 @@ var self = Joints.defineClass('Jii.controllers.HttpServer', Jii.base.Component, 
             Joints.when(action.deferred).always(function() {
                 this._sendAction(action);
             }.bind(this));
-        }.bind(this));
+        }.bind(this));*/
     },
 
     _sendAction: function(action) {
