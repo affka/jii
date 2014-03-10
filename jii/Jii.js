@@ -21,7 +21,7 @@ var self = Joints.defineClass('Jii', Joints.Object, {}, {
      * @type {object}
      */
     aliases: {
-        '@yii': 'qwe'
+        '@jii': __dirname
     },
 
     /**
@@ -83,8 +83,8 @@ var self = Joints.defineClass('Jii', Joints.Object, {}, {
      *    the corresponding registered path.
      * 3. Throw an exception or return false, depending on the `$throwException` parameter.
      *
-     * For example, by default '@yii' is registered as the alias to the Yii framework directory,
-     * say '/path/to/yii'. The alias '@yii/web' would then be translated into '/path/to/yii/web'.
+     * For example, by default '@jii' is registered as the alias to the Yii framework directory,
+     * say '/path/to/yii'. The alias '@jii/web' would then be translated into '/path/to/yii/web'.
      *
      * If you have registered two aliases '@foo' and '@foo/bar'. Then translating '@foo/bar/config'
      * would replace the part '@foo/bar' (instead of '@foo') with the corresponding registered path.
@@ -173,7 +173,7 @@ var self = Joints.defineClass('Jii', Joints.Object, {}, {
      * Registers a path alias.
      *
      * A path alias is a short name representing a long path (a file path, a URL, etc.)
-     * For example, we use '@yii' as the alias of the path to the Yii framework directory.
+     * For example, we use '@jii' as the alias of the path to the Yii framework directory.
      *
      * A path alias must start with the character '@' so that it can be easily differentiated
      * from non-alias paths.
@@ -183,7 +183,7 @@ var self = Joints.defineClass('Jii', Joints.Object, {}, {
      *
      * Any trailing '/' and '\' characters in the given path will be trimmed.
      *
-     * @param {string} alias the alias name (e.g. "@yii"). It must start with a '@' character.
+     * @param {string} alias the alias name (e.g. "@jii"). It must start with a '@' character.
      * It may contain the forward slash '/' which serves as boundary character when performing
      * alias translation by [[getAlias()]].
      * @param {string} path the path corresponding to the alias. Trailing '/' and '\' characters
@@ -191,7 +191,7 @@ var self = Joints.defineClass('Jii', Joints.Object, {}, {
      *
      * - a directory or a file path (e.g. `/tmp`, `/tmp/main.txt`)
      * - a URL (e.g. `http://www.yiiframework.com`)
-     * - a path alias (e.g. `@yii/base`). In this case, the path alias will be converted into the
+     * - a path alias (e.g. `@jii/base`). In this case, the path alias will be converted into the
      *   actual path first by calling [[getAlias()]].
      *
      * @throws {Jii.exceptions.InvalidParamException} if $path is an invalid alias.

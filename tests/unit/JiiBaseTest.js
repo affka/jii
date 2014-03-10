@@ -7,28 +7,28 @@ require('./bootstrap');
 var self = Joints.defineClass('tests.unit.JiiBaseTest', Jii.base.UnitTest, {
 
     aliasesTest: function (test) {
-        var YII_PATH = 'qwe';
-        test.strictEqual(YII_PATH, Jii.getAlias('@yii'));
+        var jiiPath = require('fs').realpathSync(__dirname + '/../../jii');
+        test.strictEqual(jiiPath, Jii.getAlias('@jii'));
 
         Jii.aliases = {};
-        test.strictEqual(Jii.getAlias('@yii', false), false);
+        test.strictEqual(Jii.getAlias('@jii', false), false);
 
-        Jii.setAlias('@yii', '/yii/framework');
-        test.strictEqual(Jii.getAlias('@yii'), '/yii/framework');
-        test.strictEqual(Jii.getAlias('@yii/test/file'), '/yii/framework/test/file');
+        Jii.setAlias('@jii', '/yii/framework');
+        test.strictEqual(Jii.getAlias('@jii'), '/yii/framework');
+        test.strictEqual(Jii.getAlias('@jii/test/file'), '/yii/framework/test/file');
 
-        Jii.setAlias('@yii/gii', '/yii/gii');
-        test.strictEqual(Jii.getAlias('@yii'), '/yii/framework');
-        test.strictEqual(Jii.getAlias('@yii/test/file'), '/yii/framework/test/file');
-        test.strictEqual(Jii.getAlias('@yii/gii'), '/yii/gii');
-        test.strictEqual(Jii.getAlias('@yii/gii/file'), '/yii/gii/file');
+        Jii.setAlias('@jii/gii', '/yii/gii');
+        test.strictEqual(Jii.getAlias('@jii'), '/yii/framework');
+        test.strictEqual(Jii.getAlias('@jii/test/file'), '/yii/framework/test/file');
+        test.strictEqual(Jii.getAlias('@jii/gii'), '/yii/gii');
+        test.strictEqual(Jii.getAlias('@jii/gii/file'), '/yii/gii/file');
 
-        Jii.setAlias('@tii', '@yii/test');
+        Jii.setAlias('@tii', '@jii/test');
         test.strictEqual(Jii.getAlias('@tii'), '/yii/framework/test');
 
-        Jii.setAlias('@yii', null);
-        test.strictEqual(Jii.getAlias('@yii', false), false);
-        test.strictEqual(Jii.getAlias('@yii/gii/file'), '/yii/gii/file');
+        Jii.setAlias('@jii', null);
+        test.strictEqual(Jii.getAlias('@jii', false), false);
+        test.strictEqual(Jii.getAlias('@jii/gii/file'), '/yii/gii/file');
 
         Jii.setAlias('@some/alias', '/www');
         test.strictEqual(Jii.getAlias('@some/alias'), '/www');
