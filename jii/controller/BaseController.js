@@ -5,9 +5,9 @@
 
 /**
  * @class Jii.controller.BaseController
- * @extends Joints.Object
+ * @extends Jii.base.Object
  */
-var self = Joints.defineClass('Jii.controller.BaseController', Joints.Object, {
+var self = Joints.defineClass('Jii.controller.BaseController', Jii.base.Object, {
 
     /**
      * @type {string} The ID of this controller.
@@ -26,8 +26,7 @@ var self = Joints.defineClass('Jii.controller.BaseController', Joints.Object, {
     defaultAction: null,
 
     /**
-     * Resolves the current request into a route and the associated parameters.
-     * @return array the first element is the route, and the second is the associated parameters.
+     * @constructor
      */
     constructor: function(id, moduleObject, config) {
         this.id = id;
@@ -62,34 +61,36 @@ var self = Joints.defineClass('Jii.controller.BaseController', Joints.Object, {
 
     /**
      * Runs a request specified in terms of a route.
-     * @param {string} route the route to be handled, e.g., 'view', 'comment/view', '/admin/comment/view'.
-     * @param {array} params the parameters to be passed to the action.
+     * @param {string} route the route to be handled, e.g., 'view', 'comment/view', 'admin/comment/view'.
+     * @param {Jii.controller.BaseRequest} request
+     * @param {Jii.controller.BaseResponse} response
      * @return {Joints.Deferred}
      */
-    run: function(route, params) {
+    run: function(route, request, response) {
         var slashIndex = route.indexOf('/');
         if (slashIndex === -1) {
-            return this.runAction(route, params);
+            return this.runAction(route, request, response);
         } else if (slashIndex > 0) {
-            return this.module.runAction(route, params);
+            return this.module.runAction(route, request, response);
         }
 
         route = _.ltrim(route, '/');
-        return Jii.app.runAction(route, params);
+        return Jii.app.runAction(route, request, response);
     },
 
     /**
      * Runs an action within this controller with the specified action ID and parameters.
      * If the action ID is empty, the method will use [[defaultAction]].
      * @param {string} id The ID of the action to be executed.
-     * @param {object} params The parameters (name-value pairs) to be passed to the action.
-     * @return {*} The result of the action.
+     * @param {Jii.controller.BaseRequest} request
+     * @param {Jii.controller.BaseResponse} response
+     * @return {Joints.Deferred} The result of the action.
      * @throws {Jii.exceptions.InvalidRouteException} if the requested action ID cannot be resolved into an action successfully.
      */
-    runAction: function(id, params) {
+    runAction: function(id, request, response) {
         var action = this.createAction(id);
         if (action === null) {
-            throw new Jii.exceptions.InvalidRouteException(Jii.t('jii', 'Unable to resolve the request: ' + this.getUniqueId() + '/' . id));
+            throw new Jii.exceptions.InvalidRouteException(Jii.t('jii', 'Unable to resolve the request: ' + this.getUniqueId() + '/' + id));
         }
 
         return Joints.when.apply(this, [
@@ -97,13 +98,23 @@ var self = Joints.defineClass('Jii.controller.BaseController', Joints.Object, {
             this.beforeAction(action)
         ]).then(function(isValid1, isValid2) {
             if (!isValid1 || !isValid2) {
-                return;
+                return false;
             }
 
-            //action.runWithParams(params);
+            return action.runWithParams(request, response);
         });
     },
 
+    /**
+     * Creates an action based on the given action ID.
+     * The method first checks if the action ID has been declared in [[actions()]]. If so,
+     * it will use the configuration declared there to create the action object.
+     * If not, it will look for a controller method whose name is in the format of `actionXyz`
+     * where `Xyz` stands for the action ID. If found, an [[InlineAction]] representing that
+     * method will be created and returned.
+     * @param {string} id the action ID.
+     * @return {Jii.controller.BaseAction} the newly created action instance. Null if the ID doesn't resolve into any action.
+     */
     createAction: function(id) {
         if (id === '') {
             id = this.defaultAction;

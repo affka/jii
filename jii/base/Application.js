@@ -21,6 +21,17 @@ var self = Joints.defineClass('Jii.base.Application', Jii.base.Module, {
 
     baseUrl: null,
     debug: null,
-    actionNamespace: 'app.actions'
+    controllerNamespace: 'app.controllers',
+
+    /**
+     * @constructor
+     */
+    constructor: function(config) {
+        this._super(null, null, config);
+    },
+
+    getUniqueId: function() {
+        return '';
+    }
 
 });

@@ -61,64 +61,20 @@ var self = Joints.defineClass('Jii.controller.httpServer.HttpServer', Jii.base.C
     _onRoute: function (expressRequest, expressResponse) {
         var request = new Jii.controller.httpServer.Request(expressRequest);
         var result = this.urlManager.parseRequest(request);
-        console.log(result);
+        if (result !== false) {
+            var route = result[0];
+            var params = result[1];
 
-            /*var result = Jii.app.getUrlManager().parseRequest(this);
-            if (result !== false) {
-                list ($route, $params) = $result;
-                 $_GET = array_merge($_GET, $params);
-                 return [$route, $_GET];
-            }
-            throw new Jii.exceptions.InvalidRouteException(Jii.t('jii', 'Page not found.'));*/
+            // Append parsed params to request
+            var queryParams = request.getQueryParams();
+            request.setQueryParams(_.extend(queryParams, params));
 
-        expressResponse.send('<form method=POST><input name=qwe /></form>');
-        /*var runDeferred = null;
-
-        if (request.method === 'OPTIONS') {
-            runDeferred = this.runAction('jii/accessControl', request, response);
-        } else {
-            var path = request.route.path;
-            path = path.substr(1, path.length);
-            if (!_.has(this.routes, path)) {
-                throw new Jii.exceptions.ApplicationException('Route `' + route + '` is not registered in config.');
-            }
-
-            var route = this.routes[path];
-            runDeferred = this.runAction(route, request, response);
+            var response = new Jii.controller.httpServer.Response(expressResponse);
+            Jii.app.runAction(route, request, response);
+            return;
         }
 
-        runDeferred.always(function(action) {
-            Joints.when(action.deferred).always(function() {
-                this._sendAction(action);
-            }.bind(this));
-        }.bind(this));*/
-    },
-
-    _sendAction: function(action) {
-        this._super(action);
-
-        // @todo
-
-        // Set headers
-        action._expressResponse.set(action.headers);
-
-        // Set or clear cookies
-        _.each(action.cookies, function(key, params) {
-            if (params.value === null) {
-                action._expressResponse.clearCookie(key, params.params);
-            } else {
-                action._expressResponse.cookie(key, params.value, params.params);
-            }
-        });
-
-        // Set status code
-        action._expressResponse.status(action.statusCode);
-
-        // Set data and send
-        if (action.params.callback) {
-            action._expressResponse.jsonp(action.data);
-        } else {
-            action._expressResponse.send(action.data);
-        }
+        //throw new Jii.exceptions.InvalidRouteException(Jii.t('jii', 'Page not found.'));
+        //Jii.app.logger.info('Page not found.');
     }
 });
