@@ -53,7 +53,7 @@ var self = Joints.defineClass('Jii.base.Module', Jii.base.Component, {
      * ~~~
      * @type {array}
      */
-    controllerMap: [],
+    controllerMap: {},
 
     /**
      * String the namespace that controller classes are in. If not set,
@@ -75,6 +75,15 @@ var self = Joints.defineClass('Jii.base.Module', Jii.base.Component, {
 
     _modules: {},
     _components: {},
+
+    /**
+     * @constructor
+     */
+    constructor: function(id, moduleObject, config) {
+        this.id = id;
+        this.module = moduleObject;
+        this._super(config);
+    },
 
     init: function() {
         if (this.controllerNamespace === null) {
@@ -132,7 +141,7 @@ var self = Joints.defineClass('Jii.base.Module', Jii.base.Component, {
             var childModuleId = id.substr(index + 1);
 
             var moduleObject = this.getModule(moduleId);
-            return moduleObject !== null ? moduleObject.getModule(childModuleId) : false;
+            return moduleObject !== null ? moduleObject.getModule(childModuleId) : null;
         }
 
         return this._modules[id] || null;
@@ -250,7 +259,6 @@ var self = Joints.defineClass('Jii.base.Module', Jii.base.Component, {
         return this._components;
     },
 
-
     /**
      * Registers a set of components in this module.
      *
@@ -311,23 +319,25 @@ var self = Joints.defineClass('Jii.base.Module', Jii.base.Component, {
      * instances. It then calls [[Jii.controller.BaseController::runAction()]] to run the action with the given parameters.
      * If the route is empty, the method will use [[defaultRoute]].
      * @param {string} route the route that specifies the action.
-     * @param {array} params the parameters to be passed to the action
-     * @return mixed the result of the action.
+     * @param {Jii.controller.BaseRequest} request
+     * @param {Jii.controller.BaseResponse} response
+     * @return {Joints.Deferred} the result of the action.
      * @throws {Jii.exceptions.InvalidRouteException} if the requested route cannot be resolved into an action successfully
      */
-    runAction: function(route, params) {
+    runAction: function(route, request, response) {
         var parts = this.createController(route);
         if (parts !== null) {
             /** @type {Jii.controller.BaseController} */
             var controller = parts[0];
             var actionId = parts[1];
 
-            return controller.runAction(actionId, params);
+            return controller.runAction(actionId, request, response);
         }
 
         var id = this.getUniqueId();
-        var requestName = id !== '' ? id + '/' + route : route;
-        throw new Jii.exceptions.InvalidRouteException('Unable to resolve the request `' + requestName + '`.');
+        var requestName = id ? id + '/' + route : route;
+        //throw new Jii.exceptions.InvalidRouteException('Unable to resolve the request `' + requestName + '`.');
+        Jii.app.logger.info('Unable to resolve the request `' + requestName + '`.');
     },
 
     /**
@@ -372,10 +382,12 @@ var self = Joints.defineClass('Jii.base.Module', Jii.base.Component, {
             className = this.controllerNamespace + '.' + className;
 
             var controllerClass = Joints.namespace(className);
-            if (controllerClass instanceof Jii.controller.BaseController) {
+            if (_.isFunction(controllerClass)) {
                 controller = new controllerClass(id, this);
-            } else if (Jii.debug) {
-                throw new Jii.exceptions.InvalidConfigException("Controller class must extend from Jii.controller.BaseController.");
+
+                if (Jii.debug && !(controller instanceof Jii.controller.BaseController)) {
+                    throw new Jii.exceptions.InvalidConfigException("Controller class must extend from Jii.controller.BaseController.");
+                }
             }
         }
 

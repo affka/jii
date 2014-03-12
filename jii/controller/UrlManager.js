@@ -105,7 +105,7 @@ var self = Joints.defineClass('Jii.controller.UrlManager', Jii.base.Component, {
      * @type {object}
      */
     ruleConfig: {
-        className: 'jii.controller.UrlRule'
+        className: 'Jii.controller.UrlRule'
     },
 
     _baseUrl: null,
@@ -142,8 +142,8 @@ var self = Joints.defineClass('Jii.controller.UrlManager', Jii.base.Component, {
 
         var rules = [];
         var verbRegexp = /^((?:(GET|HEAD|POST|PUT|PATCH|DELETE),)*(GET|HEAD|POST|PUT|PATCH|DELETE))\s+(.*)/;
-        _.each(rules, function(rule, key) {
-            if (!_.isArray(rule)) {
+        _.each(this.rules, _.bind(function(rule, key) {
+            if (!_.isObject(rule)) {
                 rule = {route: rule};
 
                 var matches = verbRegexp.exec(key);
@@ -157,7 +157,7 @@ var self = Joints.defineClass('Jii.controller.UrlManager', Jii.base.Component, {
 
             var ruleConfig = _.merge({}, this.ruleConfig, rule);
             rules.push(Jii.createObject(ruleConfig));
-        });
+        }, this));
         this.rules = rules;
 
         // @todo Cache

@@ -275,7 +275,7 @@ var self = Joints.defineClass('Jii.controller.httpServer.Request', Jii.controlle
      */
     getPathInfo: function() {
         if (this._pathInfo === null) {
-            this._pathInfo = this._httpMessage._parsedUrl.pathname;
+            this._pathInfo = _.ltrim(this._httpMessage._parsedUrl.pathname, '/');
         }
         return this._pathInfo;
     },
