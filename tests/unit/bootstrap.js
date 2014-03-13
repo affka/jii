@@ -15,3 +15,5 @@ Jii.init({
         }
     }
 });
+
+Jii.app.redis.start();

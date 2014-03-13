@@ -30,7 +30,10 @@ var self = Joints.defineClass('tests.unit.UrlRuleTest', Jii.base.UnitTest, {
 
     parseRequestTest: function(test) {
         var manager = new Jii.controller.UrlManager({cache: null});
-        var request = new Jii.controller.httpServer.Request();
+        var request = new Jii.controller.httpServer.Request({
+            method: 'GET',
+            headers: {}
+        });
         request.setHostInfo('http://en.example.com');
 
         var suites = this._getTestsForParseRequest();

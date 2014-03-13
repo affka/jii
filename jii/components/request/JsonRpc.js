@@ -1,5 +1,4 @@
 /**
- * @copyright Copyright 2013 <a href="http://www.extpoint.com">ExtPoint</a>
  * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
  * @license MIT
  */
@@ -115,13 +114,8 @@ var self = Joints.defineClass('Jii.components.request.JsonRpc', Jii.base.Compone
      * @returns {Jii.components.request.proxy.JsonRpcProxy}
      */
     createProxy: function(params) {
-        var proxy = new Jii.components.request.proxy.JsonRpcProxy();
-        proxy.init();
-
         params.request = this;
-        proxy.setConfiguration(params);
-
-        return proxy;
+        return new Jii.components.request.proxy.JsonRpcProxy(params);
     },
 
     /**

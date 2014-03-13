@@ -1,7 +1,6 @@
 /**
  * Jii - is a javascript framework based on php Yii Framework architecture.
  *
- * @copyright Copyright 2013 <a href="http://www.extpoint.com">ExtPoint</a>
  * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
  * @license MIT
  */

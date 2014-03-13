@@ -1,5 +1,4 @@
 /**
- * @copyright Copyright 2013 <a href="http://www.extpoint.com">ExtPoint</a>
  * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
  * @license MIT
  */
@@ -13,18 +12,14 @@ var mysql = require('mysql');
 var self = Joints.defineClass('Jii.components.Db', Jii.base.Component, {
 
     host: '127.0.0.1',
-    port: '',
-    username: '',
+    port: 3306,
+    username: 'root',
     password: '',
     database: '',
     timezone: 'local',
 
     _isConnected: false,
     _connection: null,
-
-    init: function () {
-
-    },
 
     /**
      * Connect to mysql server

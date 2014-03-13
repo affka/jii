@@ -1,5 +1,4 @@
 /**
- * @copyright Copyright 2013 <a href="http://www.extpoint.com">ExtPoint</a>
  * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
  * @license MIT
  */
@@ -18,9 +17,7 @@ var self = Joints.defineClass('Jii.components.Redis', Jii.base.Component, {
     port: 6379,
     stream: null,
 
-    //_subscribes: null,
-
-    init: function () {
+    start: function () {
         this.stream = net.createConnection(this.port, this.host);
         redis.RedisClient.call(this, this.stream);
     },
@@ -34,26 +31,6 @@ var self = Joints.defineClass('Jii.components.Redis', Jii.base.Component, {
         return command;
     },
 
-    /*initSubscribes: function() {
-        this._subscribes = {};
-        this.
-    },
-
-    on: function(channels, callback) {
-        if (this._subscribes === null) {
-            this.initSubscribes();
-        }
-
-        _.each(channels.split(' '), function(channel) {
-            if (_.has(this._subscribes, channel)) {
-                return;
-            }
-
-        }.bind(this));
-
-        this._super(channels, callback);
-    },
-*/
     /**
      * Get the value of a hash field
      * @param {string} key
