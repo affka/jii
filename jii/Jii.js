@@ -1,5 +1,5 @@
 /**
- * Jii - is a javascript framework based on php Yii Framework architecture.
+ * Jii — is a javascript framework based on PHP Yii Framework architecture.
  *
  * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
  * @license MIT
