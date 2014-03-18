@@ -5,92 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acc22d31-2abe-4d5c-8447-885d85b045d2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jii/controller/cometServer/CometServer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jii/base/EventsMixin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jii/controller/cometServer/Request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jii/controller/cometServer/Response.js" />
-      <change type="DELETED" beforePath="C:\CloudDrive\work\projects\Jii JS\www\tests\web\config.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\CloudDrive\work\projects\Jii JS\www\jii\package.json" afterPath="$PROJECT_DIR$/jii/build-server.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/actions/AccessControlAction.js" afterPath="$PROJECT_DIR$/jii/actions/AccessControlAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/sql/ActiveRecord.js" afterPath="$PROJECT_DIR$/jii/data/sql/ActiveRecord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Application.js" afterPath="$PROJECT_DIR$/jii/base/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/exceptions/ApplicationException.js" afterPath="$PROJECT_DIR$/jii/exceptions/ApplicationException.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/action/BaseAction.js" afterPath="$PROJECT_DIR$/jii/base/action/BaseAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/form/BaseField.js" afterPath="$PROJECT_DIR$/jii/widgets/form/BaseField.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/request/proxy/BaseProxy.js" afterPath="$PROJECT_DIR$/jii/components/request/proxy/BaseProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/router/BaseRouter.js" afterPath="$PROJECT_DIR$/jii/components/router/BaseRouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/BooleanValidator.js" afterPath="$PROJECT_DIR$/jii/validators/BooleanValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/form/Button.js" afterPath="$PROJECT_DIR$/jii/widgets/form/Button.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/action/ClientAction.js" afterPath="$PROJECT_DIR$/jii/base/action/ClientAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/storage/ClientCookieStorage.js" afterPath="$PROJECT_DIR$/jii/components/storage/ClientCookieStorage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/storage/ClientLocalStorage.js" afterPath="$PROJECT_DIR$/jii/components/storage/ClientLocalStorage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/router/ClientRouter.js" afterPath="$PROJECT_DIR$/jii/components/router/ClientRouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/storage/ClientStorage.js" afterPath="$PROJECT_DIR$/jii/components/storage/ClientStorage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Collection.js" afterPath="$PROJECT_DIR$/jii/base/Collection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/redis/CollectionSchema.js" afterPath="$PROJECT_DIR$/jii/data/redis/CollectionSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/ColumnSchema.js" afterPath="$PROJECT_DIR$/jii/data/ColumnSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/sql/ColumnSchema.js" afterPath="$PROJECT_DIR$/jii/data/sql/ColumnSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/comet/CometClient.js" afterPath="$PROJECT_DIR$/jii/components/comet/CometClient.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/comet/CometServer.js" afterPath="$PROJECT_DIR$/jii/components/comet/CometServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/redis/Command.js" afterPath="$PROJECT_DIR$/jii/data/redis/Command.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/CompareValidator.js" afterPath="$PROJECT_DIR$/jii/validators/CompareValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Component.js" afterPath="$PROJECT_DIR$/jii/base/Component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/DataModel.js" afterPath="$PROJECT_DIR$/jii/data/DataModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/DateValidator.js" afterPath="$PROJECT_DIR$/jii/validators/DateValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/Db.js" afterPath="$PROJECT_DIR$/jii/components/Db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/DefaultValueValidator.js" afterPath="$PROJECT_DIR$/jii/validators/DefaultValueValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/dialog/DialogWidget.js" afterPath="$PROJECT_DIR$/jii/widgets/dialog/DialogWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/EmailValidator.js" afterPath="$PROJECT_DIR$/jii/validators/EmailValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Enum.js" afterPath="$PROJECT_DIR$/jii/base/Enum.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/form/Fieldset.js" afterPath="$PROJECT_DIR$/jii/widgets/form/Fieldset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/FilterValidator.js" afterPath="$PROJECT_DIR$/jii/validators/FilterValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/form/FormWidget.js" afterPath="$PROJECT_DIR$/jii/widgets/form/FormWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/controller/httpServer/HttpServer.js" afterPath="$PROJECT_DIR$/jii/controller/httpServer/HttpServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/InlineValidator.js" afterPath="$PROJECT_DIR$/jii/validators/InlineValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/exceptions/InvalidConfigException.js" afterPath="$PROJECT_DIR$/jii/exceptions/InvalidConfigException.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/exceptions/InvalidParamException.js" afterPath="$PROJECT_DIR$/jii/exceptions/InvalidParamException.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/exceptions/InvalidRouteException.js" afterPath="$PROJECT_DIR$/jii/exceptions/InvalidRouteException.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/Jii.js" afterPath="$PROJECT_DIR$/jii/Jii.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/request/JsonRpc.js" afterPath="$PROJECT_DIR$/jii/components/request/JsonRpc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/actions/JsonRpcAction.js" afterPath="$PROJECT_DIR$/jii/actions/JsonRpcAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/request/proxy/JsonRpcProxy.js" afterPath="$PROJECT_DIR$/jii/components/request/proxy/JsonRpcProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/Logger.js" afterPath="$PROJECT_DIR$/jii/components/Logger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/menu/MenuItemView.js" afterPath="$PROJECT_DIR$/jii/widgets/menu/MenuItemView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/menu/MenuModel.js" afterPath="$PROJECT_DIR$/jii/widgets/menu/MenuModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/menu/MenuWidget.js" afterPath="$PROJECT_DIR$/jii/widgets/menu/MenuWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Model.js" afterPath="$PROJECT_DIR$/jii/base/Model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Module.js" afterPath="$PROJECT_DIR$/jii/base/Module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/NumberValidator.js" afterPath="$PROJECT_DIR$/jii/validators/NumberValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Object.js" afterPath="$PROJECT_DIR$/jii/base/Object.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/Query.js" afterPath="$PROJECT_DIR$/jii/data/Query.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/RangeValidator.js" afterPath="$PROJECT_DIR$/jii/validators/RangeValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/Redis.js" afterPath="$PROJECT_DIR$/jii/components/Redis.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/redis/RedisModel.js" afterPath="$PROJECT_DIR$/jii/data/redis/RedisModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/redis/RedisQuery.js" afterPath="$PROJECT_DIR$/jii/data/redis/RedisQuery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/RegularExpressionValidator.js" afterPath="$PROJECT_DIR$/jii/validators/RegularExpressionValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/RequiredValidator.js" afterPath="$PROJECT_DIR$/jii/validators/RequiredValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/SafeValidator.js" afterPath="$PROJECT_DIR$/jii/validators/SafeValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/Schema.js" afterPath="$PROJECT_DIR$/jii/data/Schema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/action/ServerAction.js" afterPath="$PROJECT_DIR$/jii/base/action/ServerAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/String.js" afterPath="$PROJECT_DIR$/jii/components/String.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/StringValidator.js" afterPath="$PROJECT_DIR$/jii/validators/StringValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/tabs/TabItemView.js" afterPath="$PROJECT_DIR$/jii/widgets/tabs/TabItemView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/tabs/TabModel.js" afterPath="$PROJECT_DIR$/jii/widgets/tabs/TabModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/data/sql/TableSchema.js" afterPath="$PROJECT_DIR$/jii/data/sql/TableSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/widgets/tabs/TabsWidget.js" afterPath="$PROJECT_DIR$/jii/widgets/tabs/TabsWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/Time.js" afterPath="$PROJECT_DIR$/jii/components/Time.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/UnitTest.js" afterPath="$PROJECT_DIR$/jii/base/UnitTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/unit/UrlRuleTest.js" afterPath="$PROJECT_DIR$/tests/unit/UrlRuleTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/UrlValidator.js" afterPath="$PROJECT_DIR$/jii/validators/UrlValidator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/components/User.js" afterPath="$PROJECT_DIR$/jii/components/User.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/validators/Validator.js" afterPath="$PROJECT_DIR$/jii/validators/Validator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/base/Widget.js" afterPath="$PROJECT_DIR$/jii/base/Widget.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Node_js_Dependencies_for_www.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jii/require-client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jii/require-server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="DELETED" beforePath="C:\CloudDrive\work\projects\Jii JS\www\jii\main.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\CloudDrive\work\projects\Jii JS\www\lib\underscore\underscore.js" afterPath="" />
+      <change type="MOVED" beforePath="C:\CloudDrive\work\projects\Jii JS\www\lib\backbone\backbone.js" afterPath="$PROJECT_DIR$/lib/backbone/backbone-events.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/view/View.js" afterPath="$PROJECT_DIR$/jii/view/View.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/unit/bootstrap.js" afterPath="$PROJECT_DIR$/tests/unit/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/joints/joints-v0.2.js" afterPath="$PROJECT_DIR$/lib/joints/joints-v0.2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jii/main.js" afterPath="$PROJECT_DIR$/jii/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/web/main.js" afterPath="$PROJECT_DIR$/tests/web/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/www.iml" afterPath="$PROJECT_DIR$/.idea/www.iml" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,7 +40,71 @@
     <favorites_list name="www" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Jii.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jii/Jii.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5253">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="8" selection-start="651" selection-end="651" vertical-scroll-proportion="0.4456522" vertical-offset="138" max-vertical-offset="782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/unit/bootstrap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="33" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="408">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="require-client.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jii/require-client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1037">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="require-server.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jii/require-server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="41" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Component.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jii/base/Component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventsMixin.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jii/base/EventsMixin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="8" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="442">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -130,12 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/jii/data/redis/Command.js" />
-        <option value="$PROJECT_DIR$/jii/data/redis/RedisModel.js" />
-        <option value="$PROJECT_DIR$/jii/data/redis/RedisQuery.js" />
-        <option value="$PROJECT_DIR$/jii/data/sql/ActiveRecord.js" />
-        <option value="$PROJECT_DIR$/jii/data/sql/ColumnSchema.js" />
-        <option value="$PROJECT_DIR$/jii/data/sql/TableSchema.js" />
         <option value="$PROJECT_DIR$/jii/exceptions/ApplicationException.js" />
         <option value="$PROJECT_DIR$/jii/exceptions/InvalidConfigException.js" />
         <option value="$PROJECT_DIR$/jii/exceptions/InvalidParamException.js" />
@@ -172,15 +158,21 @@
         <option value="$PROJECT_DIR$/jii/base/Object.js" />
         <option value="$PROJECT_DIR$/lib/joints/joints-v0.2.js" />
         <option value="$PROJECT_DIR$/jii/base/EventsMixin.js" />
-        <option value="$PROJECT_DIR$/tests/web/main.js" />
         <option value="$PROJECT_DIR$/jii/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tests/unit/ModelTest.js" />
         <option value="$PROJECT_DIR$/jii/components/Redis.js" />
-        <option value="$PROJECT_DIR$/tests/unit/bootstrap.js" />
-        <option value="$PROJECT_DIR$/jii/main.js" />
-        <option value="$PROJECT_DIR$/jii/base/Component.js" />
         <option value="$PROJECT_DIR$/tests/unit/UrlRuleTest.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/jii/Jii.js" />
+        <option value="$PROJECT_DIR$/jii/view/View.js" />
+        <option value="$PROJECT_DIR$/jii/main.js" />
+        <option value="$PROJECT_DIR$/tests/web/main.js" />
+        <option value="$PROJECT_DIR$/jii/require-client.js" />
+        <option value="$PROJECT_DIR$/jii/base/Component.js" />
+        <option value="$PROJECT_DIR$/tests/unit/bootstrap.js" />
+        <option value="$PROJECT_DIR$/jii/require-server.js" />
+        <option value="$PROJECT_DIR$/lib/backbone/backbone-events.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -300,24 +292,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jii" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="base" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -330,7 +304,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="JavaScript.Libraries" />
+    <property name="options.lastSelected" value="web-ide.project.structure" />
     <property name="SearchEverywhereHistory" value="&#10;`" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AjaxBrowser" />
@@ -340,11 +314,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CloudDrive\work\projects\Jii JS\www\jii" />
       <recent name="C:\CloudDrive\work\projects\Jii JS\www\jii\base" />
       <recent name="C:\CloudDrive\work\projects\Jii JS\www\jii\controller" />
       <recent name="C:\CloudDrive\work\projects\Jii JS\www\tests\unit" />
       <recent name="C:\CloudDrive\work\projects\Jii JS\www\tests\web\controllers" />
-      <recent name="C:\CloudDrive\work\projects\Jii JS\www\jii\exceptions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\CloudDrive\work\projects\Jii JS\www" />
@@ -352,9 +326,20 @@
       <recent name="C:\CloudDrive\work\projects\Jii JS\www\jii\exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Nodeunit.JiiBaseTest">
+  <component name="RunManager" selected="Nodeunit.ModelTests">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
@@ -378,6 +363,12 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="Web test application" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/tests/web">
@@ -434,17 +425,17 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266564" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29765624" sideWeight="0.70033294" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1984375" sideWeight="0.70033294" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48507464" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -468,374 +459,271 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jii/exceptions/InvalidParamException.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/exceptions/InvalidRouteException.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/validators/BooleanValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/validators/CompareValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/validators/DateValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/validators/DefaultValueValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/validators/EmailValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/FilterValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/InlineValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/NumberValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/RangeValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/RegularExpressionValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/RequiredValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/SafeValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/StringValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/UrlValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/validators/Validator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/dialog/DialogWidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2907">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2907" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/form/BaseField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/form/Button.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/form/Fieldset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2873">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2873" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/form/FormWidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4046">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4046" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/menu/MenuItemView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/menu/MenuModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/menu/MenuWidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/tabs/TabItemView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/tabs/TabModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/widgets/tabs/TabsWidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="126" selection-end="126" vertical-scroll-proportion="0.24817519" vertical-offset="0" max-vertical-offset="1105">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="6" column="36" selection-start="126" selection-end="126" vertical-scroll-proportion="0.24817519" vertical-offset="0" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/components/Db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="61" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3281">
-          <folding />
-        </state>
+        <state line="11" column="61" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3281" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/components/request/JsonRpc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="0" selection-start="3176" selection-end="3176" vertical-scroll-proportion="0.0" vertical-offset="1857" max-vertical-offset="4760">
-          <folding />
-        </state>
+        <state line="118" column="0" selection-start="3176" selection-end="3176" vertical-scroll-proportion="0.0" vertical-offset="1857" max-vertical-offset="4760" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/controller/cometServer/CometServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="6817">
-          <folding />
-        </state>
+        <state line="88" column="0" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="6817" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/components/comet/CometServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="6086">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/backbone/backbone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2319" selection-end="2319" vertical-scroll-proportion="0.0" vertical-offset="1147" max-vertical-offset="26979">
-          <folding />
-        </state>
+        <state line="69" column="0" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="6086" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/joints/joints-v0.2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="413" column="12" selection-start="10995" selection-end="10995" vertical-scroll-proportion="0.0" vertical-offset="6893" max-vertical-offset="12852">
-          <folding>
-            <marker date="1394633181252" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394633181252" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="413" column="12" selection-start="10995" selection-end="10995" vertical-scroll-proportion="0.0" vertical-offset="6893" max-vertical-offset="12852" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/joints/source/Events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="4" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
+        <state line="12" column="4" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/lib/delayed_stream.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="9" selection-start="633" selection-end="633" vertical-scroll-proportion="0.33333334" vertical-offset="326" max-vertical-offset="1785">
-          <folding />
-        </state>
+        <state line="27" column="9" selection-start="633" selection-end="633" vertical-scroll-proportion="0.33333334" vertical-offset="326" max-vertical-offset="1785" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.WebIde60/system/extLibs/nodejs-v0.10.21-src/core-modules-sources/lib/events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="9" selection-start="1187" selection-end="1187" vertical-scroll-proportion="0.0" vertical-offset="751" max-vertical-offset="5032">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="25" column="9" selection-start="1187" selection-end="1187" vertical-scroll-proportion="0.0" vertical-offset="751" max-vertical-offset="5032" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/joints/source/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="0" selection-start="2703" selection-end="2703" vertical-scroll-proportion="1.1243523" vertical-offset="1249" max-vertical-offset="4454">
-          <folding />
-        </state>
+        <state line="99" column="0" selection-start="2703" selection-end="2703" vertical-scroll-proportion="1.1243523" vertical-offset="1249" max-vertical-offset="4454" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/base/Object.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="4" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="952">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="35" column="4" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="952" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/build-server.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="103" selection-end="103" vertical-scroll-proportion="0.22135417" vertical-offset="0" max-vertical-offset="952">
+        <state line="5" column="25" selection-start="103" selection-end="103" vertical-scroll-proportion="0.22135417" vertical-offset="0" max-vertical-offset="952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redis/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="262" column="0" selection-start="8079" selection-end="8079" vertical-scroll-proportion="0.0" vertical-offset="4254" max-vertical-offset="20604" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/components/String.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/components/Redis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="72" selection-start="295" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/ModelTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="43" selection-start="4333" selection-end="4333" vertical-scroll-proportion="0.0" vertical-offset="1840" max-vertical-offset="2907" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/controller/httpServer/Request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="9928" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="246" selection-end="246" vertical-scroll-proportion="0.302589" vertical-offset="0" max-vertical-offset="618" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/UrlRuleTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1201" selection-end="1201" vertical-scroll-proportion="-1.4881141" vertical-offset="1568" max-vertical-offset="5814" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/grunt/lib/grunt/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="5" selection-start="8305" selection-end="8305" vertical-scroll-proportion="0.33229813" vertical-offset="3934" max-vertical-offset="7599" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/view/View.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="7" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.2777778" vertical-offset="2125" max-vertical-offset="4454" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/base/EventsMixin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="8" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/Jii.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5253">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/web/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="30" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.60714287" vertical-offset="0" max-vertical-offset="644" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/redis/index.js">
+    <entry file="file://$PROJECT_DIR$/jii/require-client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="0" selection-start="8079" selection-end="8079" vertical-scroll-proportion="0.0" vertical-offset="4254" max-vertical-offset="20604">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/components/String.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/components/Redis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="72" selection-start="295" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="22" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/base/EventsMixin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="442">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jii/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1309">
+        <state line="6" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jii/base/Component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="323">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/ModelTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="43" selection-start="4333" selection-end="4333" vertical-scroll-proportion="0.0" vertical-offset="1840" max-vertical-offset="2907">
+        <state line="13" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jii/controller/httpServer/Request.js">
+    <entry file="file://$PROJECT_DIR$/tests/unit/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="9928">
+        <state line="1" column="33" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/UrlRuleTest.js">
+    <entry file="file://$PROJECT_DIR$/lib/backbone/backbone-events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1201" selection-end="1201" vertical-scroll-proportion="-1.4881141" vertical-offset="1568" max-vertical-offset="5814">
+        <state line="41" column="60" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.3309091" vertical-offset="606" max-vertical-offset="26979" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/underscore/lodash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="115447" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jii/require-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="41" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="651" selection-end="651" vertical-scroll-proportion="0.4456522" vertical-offset="138" max-vertical-offset="782">
           <folding />
         </state>
       </provider>

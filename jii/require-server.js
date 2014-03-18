@@ -1,13 +1,19 @@
+/**
+ * Require relations libs and jii files
+ *
+ * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
+ * @license MIT
+ */
+
 // Load global libraries
-//global._ = require('./../lib/underscore/underscore');
-global._ = require('lodash');
-global._.str = require('./../lib/underscore/underscore.string');
-_.mixin(_.str.exports());
+global._ = require('./../lib/underscore/lodash');
+_.mixin(require('./../lib/underscore/underscore.string').exports());
+global.Backbone = require('./../lib/backbone/backbone-events');
+require('./../lib/joints/joints-v0.2');
 
 // Load Jii files
-global.Backbone = require('backbone');
-require('./../lib/joints/joints-v0.2');
 require('./Jii');
+Jii.isNode = true;
 require('./base/Object');
 require('./base/action/BaseAction');
 require('./base/action/ServerAction');
@@ -48,8 +54,6 @@ require('./validators/UrlValidator');
 require('./components/Db');
 require('./components/request/JsonRpc');
 require('./components/router/BaseRouter');
-//require('./components/router/ServerRouter');
-//require('./components/comet/CometServer.js');
 require('./components/Logger');
 require('./components/Redis');
 require('./components/String');
@@ -69,5 +73,3 @@ require('./controller/httpServer/Response');
 require('./controller/httpServer/HttpServer');
 require('./controller/cometServer/CometServer');
 require('./view/View');
-
-Jii.isNode = true;

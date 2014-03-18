@@ -1,4 +1,4 @@
-require('./../../jii/main');
+require('./../../jii/require-server');
 require('./controllers/SiteController');
 
 Jii.debug = true;

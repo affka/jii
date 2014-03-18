@@ -1,5 +1,5 @@
 // Load libs
-require('../../jii/main');
+require('../../jii/require-server');
 
 // Load tests app
 require('./models/SampleModel');

@@ -14,12 +14,9 @@ module.exports = function(grunt) {
                 banner: "/* --- Jii Framework --- */\n",
                 separator: ';'
             },
-            dist: {
+            client: {
                 dest: 'build/Jii.js',
-                src: [
-                    'jii/Jii.js',
-                    'jii/main.js'
-                ]
+                src: require('./jii/require-client')
             }
         },
         uglify: {
@@ -27,14 +24,18 @@ module.exports = function(grunt) {
                 src: 'build/Jii.js',
                 dest: 'build/Jii.min.js'
             }
+        },
+        nodeunit: {
+            all: ['tests/unit/*Test.js']
         }
     });
 
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
     // Default task(s).
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', [/*'nodeunit',*/ 'concat', 'uglify']);
 
 };

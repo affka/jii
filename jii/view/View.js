@@ -133,7 +133,6 @@ var self = Joints.defineClass('Jii.view.View', Jii.base.Object, {
     },
 
     /**
-     * Remove this view by taking the element out of the DOM, and removing any applicable Backbone.Events listeners.
      * @returns {*}
      */
     remove: function () {
