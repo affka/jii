@@ -1,0 +1,58 @@
+/**
+ * Files list for build client package by grunt
+ *
+ * @author <a href="http://www.affka.ru">Vladimir Kozhin</a>
+ * @license MIT
+ */
+
+module.exports = [
+    'lib/lodash/lodash.js',
+    'lib/underscore/underscore.string.js',
+    'lib/backbone/backbone-events.js',
+    'lib/joints/joints-v0.2.js',
+    'jii/Jii.js',
+    'jii/base/Object.js',
+    'jii/base/EventsMixin.js',
+    'jii/base/Component.js',
+    'jii/base/Module.js',
+    'jii/base/Application.js',
+    'jii/base/Enum.js',
+    'jii/base/Model.js',
+    'jii/base/UnitTest.js',
+    'jii/exceptions/ApplicationException.js',
+    'jii/exceptions/InvalidConfigException.js',
+    'jii/exceptions/InvalidParamException.js',
+    'jii/exceptions/InvalidRouteException.js',
+    'jii/validators/Validator.js',
+    'jii/validators/BooleanValidator.js',
+    'jii/validators/CompareValidator.js',
+    'jii/validators/DateValidator.js',
+    'jii/validators/DefaultValueValidator.js',
+    'jii/validators/EmailValidator.js',
+    'jii/validators/FilterValidator.js',
+    'jii/validators/InlineValidator.js',
+    'jii/validators/NumberValidator.js',
+    'jii/validators/RangeValidator.js',
+    'jii/validators/RegularExpressionValidator.js',
+    'jii/validators/RequiredValidator.js',
+    'jii/validators/SafeValidator.js',
+    'jii/validators/StringValidator.js',
+    'jii/validators/UrlValidator.js',
+    'jii/components/Logger.js',
+    'jii/components/String.js',
+    'jii/components/Time.js',
+    'jii/controller/UrlRule.js',
+    'jii/controller/UrlManager.js',
+    'jii/controller/BaseAction.js',
+    'jii/controller/BaseController.js',
+    'jii/controller/BaseRequest.js',
+    'jii/controller/BaseHttpRequest.js',
+    'jii/controller/BaseResponse.js',
+    'jii/controller/InlineAction.js',
+    'jii/controller/HeaderCollection.js',
+    'jii/controller/clientRouter/*',
+    'jii/view/StickyView.js',
+    'jii/view/BaseViewManager.js',
+    'jii/view/ClientWebViewManager.js',
+    'lib/sockjs/sockjs.js'
+];

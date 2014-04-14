@@ -1,11 +1,38 @@
 {
-  "name": "jii",
-  "version": "0.2.0",
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-concat": "~0.3.0"
-  }
+    "name": "jii",
+    "version": "0.2.0",
+    "author": "Vladimir Kozhin <affka@affka.ru>",
+    "description": "Jii — javascript (node js + client) framework architecture based on Yii PHP Framework v2",
+    "main": "./framework",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/affka/jii.git"
+    },
+    "keywords": [
+        "jii",
+        "yii",
+        "php"
+    ],
+    "dependencies": {
+        "cheerio": "~0.13.1",
+        "express": "~3.4.4",
+        "jquery-deferred": "~0.3.0",
+        "mysql": "~2.0.0",
+        "redis": "~0.9.0",
+        "request": "~2.27.0",
+        "sockjs": "~0.3.8"
+    },
+    "devDependencies": {
+        "nodeunit": "*",
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.6.3",
+        "grunt-contrib-nodeunit": "~0.2.0",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-copy": "^0.5.0"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10"
+    }
 }

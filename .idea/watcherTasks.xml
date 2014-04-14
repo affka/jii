@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectTasksOptions">
-    <TaskOptions isEnabled="false">
-      <option name="arguments" value="concat" />
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="concat copy" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Grunt client builder for development mode " />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="js" />
       <option name="immediateSync" value="true" />
-      <option name="name" value="Grunt client" />
+      <option name="name" value="Grunt Jii client" />
       <option name="output" value="" />
       <option name="outputFilters">
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
       <option name="passParentEnvs" value="true" />
-      <option name="program" value="grunt" />
-      <option name="scopeName" value="Project Files" />
+      <option name="program" value="$PROJECT_DIR$/node_modules/grunt-cli/bin/grunt" />
+      <option name="scopeName" value="jii" />
       <option name="trackOnlyRoot" value="false" />
-      <option name="workingDir" value="C:\CloudDrive\work\projects\Jii JS\www" />
+      <option name="workingDir" value="$PROJECT_DIR$" />
+      <envs />
+    </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="concat" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" value="" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="js" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Grunt My Application" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="$PROJECT_DIR$/node_modules/grunt-cli/bin/grunt" />
+      <option name="scopeName" value="myapp" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="$PROJECT_DIR$/tests/web" />
       <envs />
     </TaskOptions>
   </component>

@@ -7,7 +7,7 @@ require('./bootstrap');
 var self = Joints.defineClass('tests.unit.JiiBaseTest', Jii.base.UnitTest, {
 
     aliasesTest: function (test) {
-        var jiiPath = require('fs').realpathSync(__dirname + '/../../jii');
+        var jiiPath = require('fs').realpathSync(__dirname + '/../../framework');
         test.strictEqual(jiiPath, Jii.getAlias('@jii'));
 
         Jii.aliases = {};

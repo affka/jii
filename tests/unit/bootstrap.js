@@ -1,5 +1,5 @@
 // Load libs
-require('../../jii/require-server');
+require('../../framework/require-server');
 
 // Load tests app
 require('./models/SampleModel');
@@ -7,6 +7,7 @@ require('./models/SampleRedisModel');
 require('./models/FakeValidationModel');
 
 Jii.init({
+    basePath: __dirname,
     components: {
         redis: {
             className: 'Jii.components.Redis',

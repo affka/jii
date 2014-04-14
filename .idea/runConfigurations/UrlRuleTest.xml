@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="UrlRuleTest" type="NodeunitConfigurationType" factoryName="Nodeunit">
-    <setting name="nodePath" value="C:/Program Files/nodejs/node" />
+    <setting name="nodePath" value="/usr/local/bin/node" />
     <envs />
     <setting name="passParentEnvVars" value="true" />
     <setting name="nodeunitModuleDir" value="$PROJECT_DIR$/node_modules/nodeunit" />
